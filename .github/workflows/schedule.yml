@@ -6,9 +6,9 @@ on:
       environment:
         description: 'the config to use for the Cypress environment'
         required: false
-        default: 'sushi'
+        default: 'FuHuiHua'
   schedule:
-    - cron: "0/15 * * * *" # every 15 minutes
+    - cron: "0 0 * * *" # 5:00 PM PST every day
 
 jobs:
 
@@ -16,7 +16,7 @@ jobs:
   attempt_booking:
     name: Attempt Booking
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment || 'sushi' }}
+    environment: ${{ github.event.inputs.environment || 'FuHuiHua' }}
     steps:
       - uses: actions/checkout@v3
       - uses: Mercymeilya/last-workflow-status@v0.3.3
